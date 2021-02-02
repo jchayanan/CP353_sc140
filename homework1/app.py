@@ -1,7 +1,6 @@
 from flask import Flask, request, render_template
 from urllib.parse import quote
 from urllib.request import urlopen
-from newsapi import NewsApiClient
 import json
 import requests
 app = Flask(__name__)
@@ -101,15 +100,7 @@ def news():
         news = 'covid'
     
     news = get_news(news, NEWS_API_KEY)
-    ###############sidenav####################
-    city = request.args.get('city')
-    if not city:
-        city = 'bangkok'
-    weather = get_weather(city, OPEN_WEATHER_KEY)
-    ###########################################
-    return render_template('news.html', news=news, weather=weather)
-
- 
+    return render_template('news.html', news=news)
 
 @app.route("/about")
 def about():
