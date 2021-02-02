@@ -1,0 +1,46 @@
+{% extends "base_layout.html" %}
+{% block body %}
+
+<div class="row">
+    <div class="col-lg-2 col-sm-12 text-center p-3 px-4">
+        <h1>Current Weather</h1>
+        <form class="form-text">
+            <input class="form-control my-3" type="text" name="city" placeholder="weather search">
+            <input class="btn btn-primary btn-sm active" type="submit" value="Submit">
+        </form>
+
+        {% if weather.description == "city not found" %}
+        <br>
+        <h3 style="color: rgb(116, 0, 0);"><b>City not found</b></h3>
+        <img src="https://cdn.iconscout.com/icon/free/png-512/data-not-found-1965034-1662569.png" alt="not found" class="w-25">
+        {% else %}
+        <div class="icon">
+            <img src="http://openweathermap.org/img/wn/{{weather.icon}}@2x.png" alt="weather icon">
+        </div>
+        <b>
+            <p>{{weather.city}}, {{weather.country}} {{weather.temperature}}&#8451</p>
+            <p> Weather : {{weather.description}}<br>
+                Pressure : {{weather.pressure}}<br>
+                Humidity : {{weather.humidity}}%<br>
+                Wind speed : {{weather.wind}} km/h</p>
+        </b>
+
+        {% endif %}
+
+    </div>
+    <div class="col-lg-10 col-sm-12 text-center p-4">
+        <div class="news-container">
+            <div class="align-middle">
+                {% for i in range(5) %}
+                <div style="text-align: center;">
+                    <h5><b><a href="{{news.urlList[i]}}" target="_blank">{{news.titleList[i]}}</a></b></h5> <br>
+                    <img src="{{news.urlToImageList[i]}}" alt="NewsImage" class="center mb-3 w-50"> <br>
+                    <p class="ps-5">{{news.descriptionList[i]}} <a href="{{news.urlList[i]}}" target="_blank">Read more</a></p>
+                    <hr>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

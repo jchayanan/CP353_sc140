@@ -1,0 +1,49 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family:"Arial", "Courier New", sans-serif;
+    color: white;
+    padding-top: 50px;
+}
+
+.card{
+    width: 25rem;
+}
+
+.icon img{
+    width: 35%;
+}
+
+.gradient {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+  }
+
+head{
+    background-color: wheat;
+}
+
+footer{
+    bottom: 0px;
+    position: fixed;
+    width: 100%;
+}
+
+a {color:#ffffff;}         /* Unvisited link  */
+a:visited {color:#ffffff;} /* Visited link    */
+a:hover {color:#034174;}   /* Mouse over link */
+a:active {color:#0000FF;}  /* Selected link   */
+
+@media only screen and (max-width: 600px) {
+    .icon img {
+      width: 5%;
+    }
+  }
+
+@media only screen and (max-width: 990px) {
+    .icon img {
+      width: 15%;
+    }
+  }

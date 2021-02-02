@@ -1,0 +1,32 @@
+{% extends "base_layout.html" %}
+{% block body %}
+
+<div class="news-container p-5">
+    <form>
+    <div class="input-group mb-3">    
+        <div class="input-group-prepend">
+          <button class="btn btn-outline-dark bg-primary" type="submit" value="Submit" style="color: white;">Search</button>
+        </div>
+        <input class="form-control w-50 mb-4" name="news" type="text" placeholder="Tech, Sience, Covid" aria-label="" aria-describedby="basic-addon1">
+      </div>
+    </form>
+    
+    {% if news == None %}
+    <br>
+    <h3 style="color: rgb(155, 35, 35);"><b>News key word not found</b></h3>
+        {% for i in range(10) %}
+        <hr class="my-5">
+        {% endfor %}
+
+    {% else %}
+
+    {% for i in range(news.countNews) %}
+        <h4><strong>{{news.titleList[i]}}</strong></h4>
+        <p2>{{news.descriptionList[i]}}.<a href="{{url}}">Readmore</a></p2>
+    <hr>
+    {% endfor %}
+
+    {% endif %}
+
+</div>
+{% endblock %}
