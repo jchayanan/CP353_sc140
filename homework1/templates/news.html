@@ -22,7 +22,7 @@
 
     {% for i in range(news.countNews) %}
         <h4><strong>{{news.titleList[i]}}</strong></h4>
-        <p2>{{news.descriptionList[i]}}.<a href="{{url}}">Readmore</a></p2>
+        <p2>{{news.descriptionList[i]}}.<a target="_blank", href="{{news.urlList[i]}}">Readmore</a></p2>
     <hr>
     {% endfor %}
 
